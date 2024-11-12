@@ -4,7 +4,7 @@
 
 <h1 align="center">NixVim Config</h1>
 <p align="center">NeoVim with the reproducibility of NixOS and the configurability of Vim</p>
-<p align"center">This config is just at the beginning. I will add mor features soon.</p> 
+<p align="center">This config is just at the beginning. I will add mor features soon.</p> 
 
 ## Imports
 
