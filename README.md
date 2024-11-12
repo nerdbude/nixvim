@@ -1,11 +1,10 @@
 <p align="center">
-  <img src="/img/nixvim.png" width="200" />
+  <img src="/img/nixvim.png" width="400" />
 </p>
 
 <h1 align="center">NixVim Config</h1>
 <p align="center">NeoVim with the reproducibility of NixOS and the configurability of Vim</p>
-
-This config is just at the beginning. I will add mor features soon. 
+<p align"center">This config is just at the beginning. I will add mor features soon.</p> 
 
 ## Imports
 
