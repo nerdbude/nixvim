@@ -16,8 +16,10 @@ imports = [./modules/nixvim.nix]
 
 ## Config and Plugins
 
-Plugin-List
+Theme:
+- <a href="https://draculatheme.com">Dracula</a>
 
+Plugin-List:
 - nvim-tree
 - telescope
 - lualine
