@@ -24,57 +24,60 @@ let
 in
 
 {
-    imports = [nixvim.nixosModules.nixvim];
+  imports = 
+  [ 
+    nixvim.nixosModules.nixvim
+    ./nixvim_modules/alpha.nix
+    ./nixvim_modules/keymaps.nix
+  ];
 
     programs.nixvim = {
-        
+
+    globals = {
+      mapleader = " ";
+      maplocalleader = " ";
+    };
+
+
 	# BASE CONFIG
 	enable = true;
-	defaultEditor = true;
-	# COLORSCHEME 
+	defaultEditor = true;    
+
+
+    # COLORSCHEME 
 	colorschemes = {
 		dracula-nvim = {
 			enable = true;
 		};	
 	};
 
-	# PLUGINS
+    # ---------------------------------------------
+    # PLUGINS
+    # ---------------------------------------------
 	plugins = {
-        nvim-tree = {
+        nvim-tree.enable = true;
+        telescope.enable = true;
+        vim-css-color.enable = true;
+	    barbecue.enable = true;
+		fugitive.enable = true;
+		nix.enable = true;
+
+
+        lualine = {
             enable = true;
+#            icons_enabled = false;
         };
         
-        telescope = {
-			enable = true;
-		};
-		lualine = {
-			enable = true;
-		};
-		alpha = {
-			enable = true;
-			theme = "startify";
-		};
-		web-devicons = {
+        web-devicons = {
 			enable = true;
 			settings = {
 				color_icons = true;
 				strict = true;
 			};
 		};
-		vim-css-color = {
-			enable = true;
-		};
-		barbecue = {
-			enable = true;
-		};
-        fugitive = {
-			enable = true;
-		};
-		nix = {
-			enable = true;
-		};
-          };
-      opts = {
+      };
+          
+        opts = {
            number = true;
            relativenumber = true;
            tabstop = 4;
@@ -82,46 +85,7 @@ in
            scrolloff  = 4;
            splitright = true;
 
-      };
-      keymaps = [
-        {
-          mode = "n";
-          key = "<C-h>";
-          action = "<C-w>h";
-          options = {
-            desc = "Go to left window";
-            remap = true;
-          };
-        }
-        {
-          mode = "n";
-          key = "<C-j>";
-          action = "<C-w>j";
-          options = {
-            desc = "Go to lower window";
-            remap = true;
-          };
-        }
-        {
-          mode = "n";
-          key = "<C-k>";
-          action = "<C-w>k";
-          options = {
-            desc = "Go to upper window";
-            remap = true;
-          };
-        }
-        {
-          mode = "n";
-          key = "<C-l>";
-          action = "<C-w>l";
-          options = {
-            desc = "Go to right window";
-            remap = true;
-          };
-        }
-      ];
-
+       };
     };
 }
 
