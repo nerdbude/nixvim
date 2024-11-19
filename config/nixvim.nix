@@ -29,6 +29,7 @@ in
     nixvim.nixosModules.nixvim
     ./nixvim_modules/alpha.nix
     ./nixvim_modules/keymaps.nix
+    ./nixvim_modules/lualine.nix
   ];
 
     programs.nixvim = {
@@ -42,7 +43,6 @@ in
 	# BASE CONFIG
 	enable = true;
 	defaultEditor = true;    
-
 
     # COLORSCHEME 
 	colorschemes = {
@@ -61,7 +61,6 @@ in
 	    barbecue.enable = true;
 		fugitive.enable = true;
 		nix.enable = true;
-
 
         lualine = {
             enable = true;
